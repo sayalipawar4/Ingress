@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: village-service
+spec:
+  type: ClusterIP
+  selector:
+    app: village
+  ports:
+  - port: 80
+    targetPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: railway-service
+spec:
+  type: ClusterIP
+  selector:
+    app: railway
+  ports:
+  - port: 80
+    targetPort: 5001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: factory-service
+spec:
+  type: ClusterIP
+  selector:
+    app: factory
+  ports:
+  - port: 80
+    targetPort: 5002

@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: village-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: village
+  template:
+    metadata:
+      labels:
+        app: village
+    spec:
+      containers:
+      - name: village
+        image: sayalipawar1264/village:v1
+        ports:
+        - containerPort: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: railway-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: railway
+  template:
+    metadata:
+      labels:
+        app: railway
+    spec:
+      containers:
+      - name: railway
+        image: sayalipawar1264/railway:v1
+        ports:
+        - containerPort: 5001
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: factory-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: factory
+  template:
+    metadata:
+      labels:
+        app: factory
+    spec:
+      containers:
+      - name: factory
+        image: sayalipawar1264/factory:v1
+        ports:
+        - containerPort: 5002
