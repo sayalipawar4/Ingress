@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: village-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: village
@@ -23,7 +23,7 @@ kind: Deployment
 metadata:
   name: railway-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: railway
@@ -36,14 +36,14 @@ spec:
       - name: railway
         image: sayalipawar1264/railway:v1
         ports:
-        - containerPort: 5001
+        - containerPort: 5000
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: factory-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: factory
@@ -56,4 +56,4 @@ spec:
       - name: factory
         image: sayalipawar1264/factory:v1
         ports:
-        - containerPort: 5002
+        - containerPort: 5000
